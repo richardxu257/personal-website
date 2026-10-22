@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="A personal portfolio of research, projects, and writings.">
+  <title>About — Portfolio</title>
+  <script>
+    (() => {
+      let theme;
+      try { theme = localStorage.getItem('portfolio-theme'); } catch {}
+      document.documentElement.dataset.theme = theme === 'light' || theme === 'dark'
+        ? theme : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    })();
+  </script>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <noscript><style>.panel[hidden]{display:block!important}.theme-toggle{display:none}.panel{margin-bottom:5rem}</style></noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="wordmark" href="#about" aria-label="Portfolio home"><span class="mark" aria-hidden="true">✳</span> Portfolio<span class="wordmark-period">.</span></a>
+      <nav aria-label="Portfolio sections">
+        <div class="tabs" role="tablist" aria-label="Portfolio sections">
+          <a id="tab-about" class="tab" href="#about" role="tab" aria-selected="true" aria-controls="about">About</a>
+          <a id="tab-research" class="tab" href="#research" role="tab" aria-selected="false" aria-controls="research" tabindex="-1">Research</a>
+          <a id="tab-projects" class="tab" href="#projects" role="tab" aria-selected="false" aria-controls="projects" tabindex="-1">Projects</a>
+          <a id="tab-writings" class="tab" href="#writings" role="tab" aria-selected="false" aria-controls="writings" tabindex="-1">Writings</a>
+        </div>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" aria-pressed="false">
+        <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+        <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.8 14A9 9 0 0 1 10 3.2 9 9 0 1 0 20.8 14Z"/></svg>
+        <span class="theme-label">Light</span>
+      </button>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="panel" id="about" role="tabpanel" aria-labelledby="tab-about" tabindex="0">
+        <div class="section-heading"><span class="section-number" aria-hidden="true">01 /</span><h1>About<span class="heading-period">.</span></h1></div>
+        <div class="section-content"><!-- Add your About content here. --></div>
+      </section>
+      <section class="panel" id="research" role="tabpanel" aria-labelledby="tab-research" tabindex="0" hidden>
+        <div class="section-heading"><span class="section-number" aria-hidden="true">02 /</span><h1>Research<span class="heading-period">.</span></h1></div>
+        <div class="section-content"><!-- Add your Research content here. --></div>
+      </section>
+      <section class="panel" id="projects" role="tabpanel" aria-labelledby="tab-projects" tabindex="0" hidden>
+        <div class="section-heading"><span class="section-number" aria-hidden="true">03 /</span><h1>Projects<span class="heading-period">.</span></h1></div>
+        <div class="section-content"><!-- Add your Projects content here. --></div>
+      </section>
+      <section class="panel" id="writings" role="tabpanel" aria-labelledby="tab-writings" tabindex="0" hidden>
+        <div class="section-heading"><span class="section-number" aria-hidden="true">04 /</span><h1>Writings<span class="heading-period">.</span></h1></div>
+        <div class="section-content"><!-- Add your Writings content here. --></div>
+      </section>
+    </main>
+    <footer class="site-footer"><span>Personal portfolio</span><span class="footer-mark" aria-hidden="true">✳</span><span>Research · Projects · Writings</span></footer>
+  </div>
+</body>
+</html>
