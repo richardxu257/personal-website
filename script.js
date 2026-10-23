@@ -16,7 +16,7 @@
       tab.tabIndex = active ? 0 : -1;
     });
     panels.forEach(panel => { panel.hidden = panel.id !== selected.getAttribute('aria-controls'); });
-    document.title = `${selected.textContent} — Portfolio`;
+    document.title = `${selected.textContent} — Personal website`;
   }
 
   document.querySelector('[role="tablist"]').addEventListener('keydown', event => {
